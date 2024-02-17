@@ -1,0 +1,242 @@
+/* Reset some basic elements */
+body,
+h1,
+h2,
+p,
+ul,
+li,
+nav {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Apply global styles */
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  padding: 10px;
+  background-color: #f4f4f4;
+  color: #333;
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Style the header */
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(241, 239, 239, 0.2);
+}
+
+header h1 {
+  font-size: 2.5rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Navigation styles */
+nav ul {
+  list-style: none;
+  background-color: #555;
+  text-align: center;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+nav ul li {
+  display: inline-block;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: white;
+  padding: 15px 20px;
+  display: block;
+  transition: background-color 0.3s ease;
+}
+
+nav ul li a:hover,
+nav ul li a:focus {
+  background-color: #666;
+  outline: none;
+}
+
+/* Main content styles */
+main {
+  flex: 1;
+  padding: 20px;
+}
+
+main section {
+  background: white;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+main section:hover {
+  transform: translateY(-5px);
+}
+
+/* Footer styles */
+footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 20px 0;
+  margin-top: auto;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 2rem;
+  }
+
+  nav ul {
+    flex-direction: column;
+  }
+
+  nav ul li a {
+    padding: 10px;
+  }
+
+  main section {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+/* Animations and keyframes */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+body {
+  animation: fadeIn 1s ease-out;
+}
+
+/* Other visual enhancements */
+a {
+  transition: color 0.2s ease-in-out;
+}
+
+a:hover,
+a:focus {
+  color: #07fae2;
+}
+
+/* Utility classes */
+.text-center {
+  text-align: center;
+}
+
+.mt-1 {
+  margin-top: 10px;
+}
+.mt-2 {
+  margin-top: 20px;
+}
+.mb-1 {
+  margin-bottom: 10px;
+}
+.mb-2 {
+  margin-bottom: 20px;
+}
+
+.p-1 {
+  padding: 10px;
+}
+.p-2 {
+  padding: 20px;
+}
+/* Base style for the header */
+#glowing-header {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Style for the glow effect */
+.glow-effect {
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  background-color: rgba(31, 30, 30, 0.2);
+  width: 100%;
+  height: 100%;
+  transition: opacity 0.3s ease-in-out;
+  background-blend-mode: overlay;
+  z-index: 1;
+}
+
+/* You can also apply a transition to the header to smoothly change the background color */
+#glowing-header:hover {
+  background-color: #1d1a1a; /* Darker shade when hovered */
+}
+/* Style for the sparkles */
+.sparkle {
+  position: absolute;
+  background: rgb(252, 222, 55);
+  border-radius: 50%;
+  pointer-events: none;
+  opacity: 0.6;
+  box-shadow: 20 20 20px 20px rgb(248, 181, 12);
+  clip-path: polygon(
+    50% 0%,
+    61% 35%,
+    98% 35%,
+    68% 57%,
+    79% 91%,
+    50% 70%,
+    21% 91%,
+    32% 57%,
+    2% 35%,
+    39% 35%
+  );
+  animation: moveStar 1s forwards;
+}
+
+@keyframes fadeAndRotate {
+  0% {
+    transform: rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(180deg);
+    opacity: 0;
+  }
+}
+
+/* Animation for bomb-like sparkles */
+@keyframes moveBombStar {
+  0% {
+    transform: rotate(0deg) translate(0px, 0px);
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(20deg) translate(var(--translateX), var(--translateY));
+    opacity: 0;
+  }
+}
